@@ -3,7 +3,7 @@ const { Schema } = mongoose
 
 const QuestionSchema = new Schema({
   question: String,
-  answers: [String],
+  options: [String],
   correctIndex: Number
 })
 

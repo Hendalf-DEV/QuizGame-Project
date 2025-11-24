@@ -1,8 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import logger from './modules/logger/logger.js'
-import signupRouter from './controllers/signup.controller.js'
-import userRouter from './controllers/user.controller.js'
+import logger from './modules/utils/logger/logger.js'
+import { registerRoutes } from './modules/utils/routes/routes.js'
 import { MONGODB_URI, PORT } from './modules/utils/config/config.js'
 
 const app = express()
@@ -24,13 +23,9 @@ if (mongoose.connection.readyState === 0) {
   logger.info('Connected to database')
 }
 
-// Delete data in DB users for testing purposes
-await mongoose.connection.db.dropCollection('users' )
-
 app.use(express.json())
 
-app.use('/api/signup', signupRouter)
-app.use('/api/users', userRouter)
+registerRoutes(app)
 
 app.use(express.static('dist'))
 
