@@ -1,7 +1,7 @@
 let listeners = []
 let notificationId = 0
 
-const loggerService = {
+const notificationService = {
   subscribe: (callback) => {
     listeners.push(callback)
     return () => {
@@ -15,12 +15,12 @@ const loggerService = {
   },
 
   success: (message) => {
-    loggerService.notify(message, 'success')
+    notificationService.notify(message, 'success')
   },
 
   error: (message) => {
-    loggerService.notify(message, 'error')
+    notificationService.notify(message, 'error')
   }
 }
 
-export default loggerService
+export default notificationService

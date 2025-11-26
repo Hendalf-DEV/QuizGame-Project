@@ -1,6 +1,6 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
-import { JWT_SECRET } from '../modules/utils/config/config.js'
+import { JWT_SECRET } from '../config/config.js'
 import { User } from '../models/user.model.js'
 
 const validateRouter = express.Router()

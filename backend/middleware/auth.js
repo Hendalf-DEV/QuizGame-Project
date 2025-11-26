@@ -1,4 +1,4 @@
-import logger from '../logger/logger.js'
+import logger from '../utils/logger.js'
 import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../config/config.js'
 

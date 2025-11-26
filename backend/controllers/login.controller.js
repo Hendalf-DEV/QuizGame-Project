@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 import express from 'express'
 import { User } from '../models/user.model.js'
-import { JWT_SECRET } from '../modules/utils/config/config.js'
+import { JWT_SECRET } from '../config/config.js'
 const loginRouter = express.Router()
 
 loginRouter.post('/', async (req, res) => {

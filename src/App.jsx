@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import SignUpForm from './components/signUpForm.component.jsx'
-import LoginForm from './components/loginForm.component.jsx'
-import Logger from './components/logger.component.jsx'
+import SignUpForm from './components/SignUpForm.jsx'
+import LoginForm from './components/LoginForm.jsx'
+import Logger from './components/Logger.jsx'
 import authService from './services/auth.js'
-import loggerService from './services/logger.js'
+import notificationService from './services/notifications.js'
 import syncService from './services/sync.js'
 import './styles/loading.css'
-import AppRoutes from './Routes.jsx'
+import AppRoutes from './routes/routes.jsx'
 
 function App() {
   const [username, setUsername] = useState('')
@@ -31,7 +31,7 @@ function App() {
         window.localStorage.removeItem('loggedGameUser')
         setUser(null)
         setIsValidating(false)
-        loggerService.error('Stored user data is corrupted. Please log in again.')
+        notificationService.error('Stored user data is corrupted. Please log in again.')
         return
       }
 
@@ -41,7 +41,7 @@ function App() {
         window.localStorage.removeItem('loggedGameUser')
         setUser(null)
         setIsValidating(false) // Set loading to false
-        loggerService.error('Session expired. Please log in again.')
+        notificationService.error('Session expired. Please log in again.')
         return
       }
 
@@ -69,17 +69,17 @@ function App() {
     event.preventDefault()
 
     if (!username || !password) {
-      loggerService.error('Please fill in all fields')
+      notificationService.error('Please fill in all fields')
       return
     }
 
     if (username.length < 3) {
-      loggerService.error('Username must be at least 3 characters long')
+      notificationService.error('Username must be at least 3 characters long')
       return
     }
 
     if (password.length < 3) {
-      loggerService.error('Password must be at least 3 characters long')
+      notificationService.error('Password must be at least 3 characters long')
       return
     }
 
@@ -92,9 +92,9 @@ function App() {
       setUsername('')
       setPassword('')
       syncService.userLoggedIn(user)
-      loggerService.success('Login successful!')
+      notificationService.success('Login successful!')
     } catch (error) {
-      loggerService.error('Wrong username or password')
+      notificationService.error('Wrong username or password')
     }
   }
 
@@ -102,17 +102,17 @@ function App() {
     event.preventDefault()
 
     if (!username || !password) {
-      loggerService.error('Please fill in all fields')
+      notificationService.error('Please fill in all fields')
       return
     }
 
     if (username.length < 3) {
-      loggerService.error('Username must be at least 3 characters long')
+      notificationService.error('Username must be at least 3 characters long')
       return
     }
 
     if (password.length < 3) {
-      loggerService.error('Password must be at least 3 characters long')
+      notificationService.error('Password must be at least 3 characters long')
       return
     }
 
@@ -126,9 +126,9 @@ function App() {
       setUsername('')
       setPassword('')
       setEmail('')
-      loggerService.success('Sign-up successful! Please log in.')
+      notificationService.success('Sign-up successful! Please log in.')
     } catch (exception) {
-      loggerService.error(exception.response?.data?.error || 'Sign-up failed')
+      notificationService.error(exception.response?.data?.error || 'Sign-up failed')
     }
   }
 

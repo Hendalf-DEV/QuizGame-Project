@@ -1,4 +1,4 @@
-const Home = ({ handleLogout, user }) => {
+const HomePage = ({ handleLogout, user }) => {
   return (
     <div id={'logout-container'}>
       <h2>Welcome!</h2>
@@ -8,4 +8,4 @@ const Home = ({ handleLogout, user }) => {
   )
 }
 
-export default Home
+export default HomePage
