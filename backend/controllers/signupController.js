@@ -1,4 +1,4 @@
-import { User } from '../models/user.model.js'
+import { User } from '../models/userModel.js'
 import bcrypt from 'bcryptjs'
 import express from 'express'
 const signupRouter = express.Router()

@@ -7,4 +7,4 @@ const QuestionSchema = new Schema({
   correctIndex: Number
 })
 
-export const questions = mongoose.models.question || mongoose.model('Question', QuestionSchema)
+export const question = mongoose.models.question || mongoose.model('Question', QuestionSchema)

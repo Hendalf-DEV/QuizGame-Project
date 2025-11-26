@@ -1,4 +1,4 @@
-const SignUpForm = ({ handleSignUp, setUsername, setEmail, setPassword }) => {
+const SignUpFormComponent = ({ handleSignUp, setUsername, setEmail, setPassword }) => {
   return (
     <div className={'sign-up'}>
       <h2>Sign-Up</h2>
@@ -38,4 +38,4 @@ const SignUpForm = ({ handleSignUp, setUsername, setEmail, setPassword }) => {
     </div>
   )
 }
-export default SignUpForm
+export default SignUpFormComponent

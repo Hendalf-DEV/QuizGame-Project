@@ -1,4 +1,4 @@
-const LoginForm = ({ handleLogin, setUsername, setPassword }) => {
+const LoginFormComponent = ({ handleLogin, setUsername, setPassword }) => {
   return (
     <div className="login">
       <h2>Login</h2>
@@ -28,4 +28,4 @@ const LoginForm = ({ handleLogin, setUsername, setPassword }) => {
   )
 }
 
-export default LoginForm
+export default LoginFormComponent

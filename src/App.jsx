@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import SignUpForm from './components/SignUpForm.jsx'
-import LoginForm from './components/LoginForm.jsx'
-import Logger from './components/Logger.jsx'
-import authService from './services/auth.js'
-import notificationService from './services/notifications.js'
-import syncService from './services/sync.js'
+import SignUpFormComponent from './components/SignUpFormComponent.jsx'
+import LoginFormComponent from './components/LoginFormComponent.jsx'
+import LoggerComponent from './components/LoggerComponent.jsx'
+import authService from './services/authenticationService.js'
+import notificationService from './services/notificationsService.js'
+import syncService from './services/synchronizationService.js'
 import './styles/loading.css'
-import AppRoutes from './routes/routes.jsx'
+import AppRoutes from './routes/pagesRoutes.jsx'
 
 function App() {
   const [username, setUsername] = useState('')
@@ -140,7 +140,7 @@ function App() {
 
   return (
     <>
-      <Logger />
+      <LoggerComponent />
       {isValidating ? (
         <div className="loading-container">
           <div className="spinner"></div>
@@ -150,7 +150,7 @@ function App() {
         <div id={'auth-container'}>
           {!showSignUp ? (
             <div>
-              <LoginForm
+              <LoginFormComponent
                 handleLogin={handleLogin}
                 setUsername={setUsername}
                 setPassword={setPassword}
@@ -161,7 +161,7 @@ function App() {
             </div>
           ) : (
             <div>
-              <SignUpForm
+              <SignUpFormComponent
                 handleSignUp={handleSignUp}
                 username={username}
                 setUsername={setUsername}

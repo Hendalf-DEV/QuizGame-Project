@@ -1,8 +1,8 @@
-import questionsRouter from '../controllers/questions.controller.js'
-import usersRouter  from '../controllers/users.controller.js'
-import loginRouter from '../controllers/login.controller.js'
-import signupRouter from '../controllers/signup.controller.js'
-import validateRouter from '../controllers/validate.controller.js'
+import questionsRouter from '../controllers/questionsController.js'
+import usersRouter  from '../controllers/usersController.js'
+import loginRouter from '../controllers/loginController.js'
+import signupRouter from '../controllers/signupController.js'
+import validateRouter from '../controllers/validateController.js'
 
 const apiRoutesRoutes = [
   { path: '/questions', router: questionsRouter },

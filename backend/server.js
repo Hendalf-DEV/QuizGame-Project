@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import logger from './utils/logger.js'
-import { registerRoutes } from './routes/api.js'
+import logger from './utils/loggerUtil.js'
+import { registerRoutes } from './routes/apiRoute.js'
 import { MONGODB_URI, PORT } from './config/config.js'
 
 const app = express()

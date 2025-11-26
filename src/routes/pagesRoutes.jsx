@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HomePage from '../pages/Home.jsx'
-import QuizPage from '../pages/Quiz.jsx'
-import RankingPage from '../pages/Ranking.jsx'
+import HomePage from '../pages/HomePage.jsx'
+import QuizPage from '../pages/QuizPage.jsx'
+import RankingPage from '../pages/RankingPage.jsx'
 
 export default function AppRoutes({ user, handleLogout }) {
   return (

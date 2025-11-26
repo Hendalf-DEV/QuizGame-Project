@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import '../styles/components/logger.style.css'
-import notificationService from '../services/notifications.js'
+import '../styles/components/loggerComponentStyle.css'
+import notificationService from '../services/notificationsService.js'
 
-const Logger = () => {
+const LoggerComponent = () => {
   const [notifications, setNotifications] = useState([])
   const [exitingId, setExitingId] = useState(null)
 
@@ -34,4 +34,4 @@ const Logger = () => {
   )
 }
 
-export default Logger
+export default LoggerComponent
