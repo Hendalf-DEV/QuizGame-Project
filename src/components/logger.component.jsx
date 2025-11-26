@@ -7,7 +7,7 @@ const Logger = () => {
   const [exitingId, setExitingId] = useState(null)
 
   useEffect(() => {
-    const unsubscribe = loggerService.subscribe((notification) => {
+    return loggerService.subscribe((notification) => {
       setNotifications(prev => [...prev, notification])
       setExitingId(null)
 
@@ -20,8 +20,6 @@ const Logger = () => {
         setExitingId(null)
       }, 5000)
     })
-
-    return unsubscribe
   }, [])
 
   if (notifications.length === 0) return null
