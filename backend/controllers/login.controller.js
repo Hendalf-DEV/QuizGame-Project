@@ -7,7 +7,12 @@ const loginRouter = express.Router()
 
 loginRouter.post('/', async (req, res) => {
   const { username, password } = req.body
-  const user = await User.findOne({ username })
+  const user = await User.findOne({
+    $or: [
+      { username: username },
+      { email: username }
+    ]
+  })
 
   const passwordCorrect = user === null
     ? false
@@ -15,12 +20,12 @@ loginRouter.post('/', async (req, res) => {
 
   if (!(user && passwordCorrect)) {
     return res.status(401).json({
-      error: 'invalid username or password'
+      error: 'invalid username/email or password'
     })
   }
 
   const userForToken = {
-    username: user.username,
+    username: user.username || user.email,
     id: user._id,
   }
 

@@ -7,8 +7,8 @@ signupRouter.post('/', async (req, res) => {
   try {
     const { username, password, email } = req.body
 
-    if (!username || !password || !email) {
-      return res.status(400).json({ message: 'All fields are required.' })
+    if (!username || !password) {
+      return res.status(400).json({ message: 'Username and password are required.' })
     }
 
     const existingUser = await User.findOne({ username })
@@ -16,10 +16,23 @@ signupRouter.post('/', async (req, res) => {
       return res.status(409).json({ message: 'Username already taken.' })
     }
 
+    if (email && email.trim() !== '') {
+      const existingEmail = await User.findOne({ email: email.trim() })
+      if (existingEmail) {
+        return res.status(409).json({ message: 'Email already in use.' })
+      }
+    }
+
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
 
-    const newUser = new User({ username, passwordHash: hashedPassword, email })
+    const userDoc = { username, passwordHash: hashedPassword }
+
+    if (email && email.trim() !== '') {
+      userDoc.email = email.trim()
+    }
+
+    const newUser = new User(userDoc)
     await newUser.save()
 
     res.status(201).json({ message: 'User created successfully.' })

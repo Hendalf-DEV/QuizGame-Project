@@ -5,7 +5,13 @@ import { v6 as uuidv6 } from 'uuid'
 const userSchema = new Schema({
   _id: { type: String, default: uuidv6 },
   username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
+  email: {
+    type: String,
+    required: false,
+    unique: true,
+    sparse: true,
+    default: undefined
+  },
   passwordHash: { type: String, required: true },
   score: { type: Number, default: 0 }
 })
