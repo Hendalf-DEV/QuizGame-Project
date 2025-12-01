@@ -10,11 +10,11 @@ if (mongoose.connection.readyState === 0) {
   mongoose.set('strictQuery', false)
 
   logger.info('Connecting to database...')
-  // Optimize MongoDB connection for performance
+
   const mongooseOptions = {
-    maxPoolSize: 10, // Maximum number of connections in the pool
-    serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
-    socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+    maxPoolSize: 10,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
   }
 
   await mongoose.connect(MONGODB_URI, mongooseOptions).catch(
@@ -28,7 +28,6 @@ app.use(express.json())
 registerRoutes(app)
 
 app.use(express.static('dist'))
-
 
 app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`)
