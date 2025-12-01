@@ -12,7 +12,7 @@ loginRouter.post('/', async (req, res) => {
       { username: username },
       { email: username }
     ]
-  })
+  }).collation({ locale: 'en', strength: 2 })
 
   const passwordCorrect = user === null
     ? false

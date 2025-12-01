@@ -11,7 +11,7 @@ signupRouter.post('/', async (req, res) => {
       return res.status(400).json({ message: 'Username and password are required.' })
     }
 
-    const existingUser = await User.findOne({ username })
+    const existingUser = await User.findOne({ username }).collation({ locale: 'en', strength: 2 })
     if (existingUser) {
       return res.status(409).json({ message: 'Username already taken.' })
     }

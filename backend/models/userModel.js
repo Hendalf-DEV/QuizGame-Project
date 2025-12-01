@@ -16,6 +16,8 @@ const userSchema = new Schema({
   score: { type: Number, default: 0 }
 })
 
+userSchema.index({ username: 1 }, { unique: true, collation: { locale: 'en', strength: 2 } })
+
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id
