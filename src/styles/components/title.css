@@ -1,0 +1,86 @@
+#funny-h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  background: linear-gradient(45deg, #fff, #f0f8ff, #e6f3ff, #fff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation:
+    floatTitle 4s ease-in-out infinite,
+    rotateTitle 6s ease-in-out infinite,
+    shimmer 3s ease-in-out infinite;
+  opacity: 1;
+}
+
+#funny-h1.clickable {
+  animation:
+    floatTitle 4s ease-in-out infinite,
+    rotateTitle 6s ease-in-out infinite,
+    shimmer 3s ease-in-out infinite,
+    pulse 3s ease-in-out infinite;
+}
+
+#funny-h1:hover {
+  animation:
+    bounceHover 0.6s ease-in-out,
+    shimmerFast 0.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+#funny-h1:active {
+  animation: explode 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 1))
+          drop-shadow(0 0 80px rgba(102, 126, 234, 0.8));
+}
+
+.click-hint {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: hintPulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+#funny-h1.auth-mode {
+  top: 15%;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  animation:
+    floatTitleSmall 3s ease-in-out infinite,
+    shimmer 3s ease-in-out infinite;
+}
+
+.auth-active #funny-h1 {
+  top: 15%;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  animation:
+    floatTitleSmall 3s ease-in-out infinite,
+    shimmer 3s ease-in-out infinite;
+}
+
+.title-hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: fadeOutUp 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+

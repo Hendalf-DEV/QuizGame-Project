@@ -1,0 +1,313 @@
+.ranking-container {
+  max-width: min(92vw, 650px) !important;
+  max-height: calc(100vh - 2rem) !important;
+  overflow: hidden !important;
+  padding: clamp(0.5rem, 1.5vmin, 1rem) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+.ranking-container .page-title {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+  margin-top: 3rem;
+}
+
+.ranking-container .page-description {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.user-rank-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+  border: 2px solid rgba(102, 126, 234, 0.4);
+  border-radius: 15px;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  animation: fadeInScale 0.6s ease-out;
+}
+
+.user-rank-header {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.user-rank-content {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.user-rank-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.5rem 0.7rem;
+  min-width: 55px;
+  min-height: 55px;
+}
+
+.rank-emoji {
+  font-size: 1.3rem;
+  margin-bottom: 0.15rem;
+  line-height: 1;
+}
+
+.rank-number-large {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.user-rank-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.user-rank-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+  line-height: 1.2;
+}
+
+.user-rank-score {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+.ranking-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 0;
+  flex-shrink: 1;
+  min-height: 0;
+  padding: 0.4rem 0 0.2rem 0;
+  overflow: visible;
+}
+
+.leaderboard-list .rank-item {
+  margin: 0.1rem 0;
+}
+
+.leaderboard-preview {
+  margin-bottom: 2rem;
+}
+
+.no-rankings {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+}
+
+.no-rankings p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.3s ease;
+  animation: slideInLeft 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.rank-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.rank-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.rank-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.rank-item:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.rank-item:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.rank-item:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.rank-item:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+.rank-gold {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 255, 255, 0.05));
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.rank-gold::before {
+  background: linear-gradient(180deg, #FFD700, #FFA500);
+}
+
+.rank-silver {
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.15), rgba(255, 255, 255, 0.05));
+  border-color: rgba(192, 192, 192, 0.4);
+}
+
+.rank-silver::before {
+  background: linear-gradient(180deg, #C0C0C0, #A8A8A8);
+}
+
+.rank-bronze {
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.15), rgba(255, 255, 255, 0.05));
+  border-color: rgba(205, 127, 50, 0.4);
+}
+
+.rank-bronze::before {
+  background: linear-gradient(180deg, #CD7F32, #B87333);
+}
+
+.rank-item.current-user {
+  background: linear-gradient(135deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.1));
+  border-color: rgba(67, 233, 123, 0.5);
+  box-shadow: 0 0 20px rgba(67, 233, 123, 0.2);
+}
+
+.rank-item.current-user::before {
+  background: linear-gradient(180deg, #43e97b, #38f9d7);
+}
+
+.rank-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  flex-shrink: 0;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.rank-position .rank-emoji {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 0;
+  display: block;
+}
+
+.rank-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin: 0;
+  display: block;
+}
+
+.rank-info {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.rank-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.rank-info p {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.rank-username {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.15rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rank-score {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.you-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rank-trophy {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.ranking-footer {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+

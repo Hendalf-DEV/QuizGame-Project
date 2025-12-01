@@ -1,0 +1,496 @@
+@media (max-height: 700px) {
+  #auth-container {
+    padding: 1rem;
+    max-height: 100vh;
+  }
+
+  .content-card {
+    padding: 1rem;
+    max-height: 100vh;
+  }
+
+  .page-title {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .page-description {
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .feature-preview,
+  .leaderboard-preview {
+    margin-bottom: 1rem !important;
+    gap: 0.8rem !important;
+  }
+
+  .preview-item,
+  .rank-item {
+    padding: 0.8rem !important;
+  }
+
+  .preview-icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .start-button,
+  .view-button {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  .coming-soon {
+    margin-top: 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .input-group {
+    margin-bottom: 1rem !important;
+  }
+
+  .login h2,
+  .sign-up h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-height: 600px) {
+  #auth-container {
+    padding: 0.8rem;
+    max-height: 100vh;
+  }
+
+  .content-card {
+    padding: 0.8rem;
+    max-height: 100vh;
+  }
+
+  .page-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .page-description {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .feature-preview,
+  .leaderboard-preview {
+    margin-bottom: 0.8rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .preview-item,
+  .rank-item {
+    padding: 0.6rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .preview-icon {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .preview-item h3,
+  .rank-info h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .preview-item p,
+  .rank-info p {
+    font-size: 0.8rem !important;
+  }
+
+  .start-button,
+  .view-button {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    margin: 0.3rem 0 !important;
+  }
+
+  .coming-soon {
+    margin-top: 0.3rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .go-back-button {
+    top: 0.3rem !important;
+    left: 0.3rem !important;
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .content-card .page-title {
+    margin-top: 1.5rem !important;
+  }
+
+  .input-group {
+    margin-bottom: 0.8rem !important;
+  }
+
+  .input-group input {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .login h2,
+  .sign-up h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  button {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 0.5rem;
+  }
+
+  .content-card {
+    padding: 1.5rem;
+    max-height: 95vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #auth-container {
+    min-width: 95vw;
+    max-width: 95vw;
+    padding: 1.2rem;
+    border-radius: 20px;
+  }
+
+  .content-card {
+    padding: 1.2rem;
+    border-radius: 20px;
+    max-width: 95vw;
+    max-height: calc(100vh - 3rem);
+  }
+
+  .page-container {
+    padding: 0.5rem;
+  }
+
+  #funny-h1 {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  #funny-h1.auth-mode,
+  .auth-active #funny-h1 {
+    top: 15%;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .feature-preview {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .navigation-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .page-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .page-description {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .content-card .page-title {
+    margin-top: 3rem;
+  }
+
+  .go-back-button {
+    top: 0.8rem !important;
+    left: 0.8rem !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .quiz-active {
+    max-width: 95vw !important;
+  }
+
+  .quiz-header {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quiz-info {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
+  }
+
+  .question-counter,
+  .score-counter {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    text-align: center;
+  }
+
+  .question-text {
+    font-size: 1.2rem;
+  }
+
+  .quiz-option {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .option-letter {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .next-button {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .result-title {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  .score-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .score-number {
+    font-size: 3rem;
+  }
+
+  .score-total {
+    font-size: 1.2rem;
+  }
+
+  .percentage {
+    font-size: 2rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .result-message {
+    font-size: 1.1rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #auth-container {
+    padding: 1rem;
+    min-width: 98vw;
+    border-radius: 15px;
+    max-height: calc(100vh - 2rem);
+  }
+
+  .content-card {
+    padding: 1rem;
+    border-radius: 15px;
+    max-width: 98vw;
+    max-height: calc(100vh - 2rem);
+  }
+
+  .page-container {
+    padding: 0.25rem;
+  }
+
+  .go-back-button {
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .content-card .page-title {
+    margin-top: 2.5rem;
+    font-size: 1.8rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .page-description {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .feature-preview,
+  .leaderboard-preview {
+    gap: 0.8rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .preview-item,
+  .rank-item {
+    padding: 1rem !important;
+    border-radius: 12px;
+  }
+
+  .preview-icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .preview-item h3,
+  .rank-info h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .preview-item p,
+  .rank-info p {
+    font-size: 0.85rem !important;
+  }
+
+  .start-button,
+  .view-button {
+    padding: 1rem 1.8rem !important;
+    font-size: 1rem !important;
+    margin: 0.8rem 0 !important;
+  }
+
+  .coming-soon {
+    margin-top: 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .click-hint {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+    top: 115%;
+  }
+
+  .input-group {
+    margin-bottom: 1rem !important;
+  }
+
+  .input-group input {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .login h2,
+  .sign-up h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .user-info {
+    padding: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .user-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 2.5rem !important;
+    margin-right: 0.8rem !important;
+  }
+
+  .username {
+    font-size: 1.3rem !important;
+  }
+
+  .welcome-title {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .quiz-question {
+    padding: 1rem;
+  }
+
+  .question-text {
+    font-size: 1.1rem;
+  }
+
+  .quiz-option {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    gap: 0.8rem;
+  }
+
+  .option-letter {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+
+  .score-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .score-number {
+    font-size: 2.5rem;
+  }
+
+  .score-total {
+    font-size: 1rem;
+  }
+
+  .percentage {
+    font-size: 1.8rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) and (max-height: 600px) {
+  #auth-container {
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 95vh;
+  }
+
+  .content-card {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .login h2,
+  .sign-up h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .input-group {
+    margin-bottom: 1rem !important;
+  }
+
+  .input-group input {
+    padding: 0.7rem !important;
+  }
+
+  button {
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+

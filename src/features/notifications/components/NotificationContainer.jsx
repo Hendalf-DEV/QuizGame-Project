@@ -1,5 +1,5 @@
 import useNotifications from '../hooks/useNotifications'
-import '../../../styles/components/loggerComponentStyle.css'
+import '../../../styles/components/logger.css'
 
 const NotificationContainer = () => {
   const { notifications, exitingId } = useNotifications()
