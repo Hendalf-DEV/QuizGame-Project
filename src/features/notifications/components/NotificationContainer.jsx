@@ -9,7 +9,6 @@ const NotificationContainer = () => {
   const currentNotification = notifications[notifications.length - 1]
   const isExiting = exitingId === currentNotification.id
 
-
   return (
     <div className={`logger ${currentNotification.type} ${isExiting ? 'exiting' : ''}`}>
       {currentNotification.message}
