@@ -5,11 +5,9 @@ import { syncService } from '../../shared/services/syncService'
 import { AuthContext } from '../contexts/AuthContext'
 import { AUTH_ACTIONS, initialAuthState, authReducer } from '../utils/authUtils'
 
-// Provider component
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialAuthState)
 
-  // Initialize authentication state
   useEffect(() => {
     const validateUserToken = async () => {
       dispatch({ type: AUTH_ACTIONS.SET_LOADING, payload: true })
@@ -47,7 +45,6 @@ export const AuthProvider = ({ children }) => {
 
     validateUserToken()
 
-    // Subscribe to sync events
     return syncService.subscribe((message) => {
       switch (message.type) {
       case 'USER_LOGGED_OUT':
@@ -63,7 +60,6 @@ export const AuthProvider = ({ children }) => {
     })
   }, [])
 
-  // Auth actions
   const login = async (credentials) => {
     try {
       dispatch({ type: AUTH_ACTIONS.AUTH_START })
@@ -89,8 +85,18 @@ export const AuthProvider = ({ children }) => {
       return { success: true }
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.AUTH_ERROR, payload: 'Signup failed' })
-      notificationService.error(error.response?.data?.error || 'Sign-up failed')
-      return { success: false, error: 'Signup failed' }
+
+      const errorMessage = error.response?.data?.message || error.response?.data?.error || 'Sign-up failed'
+
+      if (errorMessage.includes('Username already taken')) {
+        notificationService.error('Username is already taken')
+      } else if (errorMessage.includes('Email already in use')) {
+        notificationService.error('Email is already registered')
+      } else {
+        notificationService.error(errorMessage)
+      }
+
+      return { success: false, error: errorMessage }
     }
   }
 

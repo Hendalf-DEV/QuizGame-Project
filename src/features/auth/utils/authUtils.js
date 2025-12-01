@@ -1,4 +1,4 @@
-// Auth action types
+
 export const AUTH_ACTIONS = {
   AUTH_START: 'AUTH_START',
   AUTH_SUCCESS: 'AUTH_SUCCESS',
@@ -7,7 +7,6 @@ export const AUTH_ACTIONS = {
   SET_LOADING: 'SET_LOADING'
 }
 
-// Initial auth state
 export const initialAuthState = {
   user: null,
   isAuthenticated: false,
@@ -15,7 +14,6 @@ export const initialAuthState = {
   error: null
 }
 
-// Auth reducer
 export const authReducer = (state, action) => {
   switch (action.type) {
   case AUTH_ACTIONS.AUTH_START:
