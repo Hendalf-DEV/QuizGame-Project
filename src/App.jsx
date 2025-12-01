@@ -2,8 +2,7 @@ import React from 'react'
 import { AuthProvider, useAuth, AuthContainer } from './features/auth'
 import { NotificationContainer } from './features/notifications'
 import { LoadingSpinner, AppRoutes } from './features/shared'
-import './styles/loading.css'
-import './styles/main.css'
+import './styles/index.css'
 
 const AppContent = () => {
   const { isAuthenticated, isLoading } = useAuth()
