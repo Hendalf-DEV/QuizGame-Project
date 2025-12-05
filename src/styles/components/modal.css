@@ -116,7 +116,7 @@
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 16px;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
   outline: none;
@@ -286,7 +286,7 @@
   }
 
   .search-input {
-    font-size: 0.9rem;
+    font-size: 16px;
     padding: 0.7rem 0.9rem;
   }
 }

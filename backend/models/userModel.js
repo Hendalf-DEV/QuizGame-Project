@@ -4,12 +4,10 @@ import { v6 as uuidv6 } from 'uuid'
 
 const userSchema = new Schema({
   _id: { type: String, default: uuidv6 },
-  username: { type: String, required: true, unique: true },
+  username: { type: String, required: true },
   email: {
     type: String,
     required: false,
-    unique: true,
-    sparse: true,
     default: undefined
   },
   passwordHash: { type: String, required: true },
@@ -17,6 +15,7 @@ const userSchema = new Schema({
 })
 
 userSchema.index({ username: 1 }, { unique: true, collation: { locale: 'en', strength: 2 } })
+userSchema.index({ email: 1 }, { unique: true, sparse: true, collation: { locale: 'en', strength: 2 } })
 
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {
